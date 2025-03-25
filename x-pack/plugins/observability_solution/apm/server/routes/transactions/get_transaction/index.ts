@@ -23,6 +23,7 @@ import {
   AT_TIMESTAMP,
   PROCESSOR_NAME,
   SPAN_LINKS,
+  SPAN_ID,
   TRANSACTION_AGENT_MARKS,
   SERVICE_LANGUAGE_NAME,
   URL_FULL,
@@ -96,7 +97,7 @@ export async function getTransaction({
         },
       },
       fields: [...requiredFields, ...optionalFields],
-      _source: [SPAN_LINKS, TRANSACTION_AGENT_MARKS],
+      _source: [SPAN_ID, SPAN_LINKS, TRANSACTION_AGENT_MARKS],
     },
   });
 
